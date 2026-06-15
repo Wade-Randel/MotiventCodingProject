@@ -5,5 +5,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://wade-randel.github.io',
+  base: '/MotiventCodingProject',
   integrations: [react()]
 });
