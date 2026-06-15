@@ -72,17 +72,22 @@ import roofingImage from '../assets/roofing2.jpg';
     z-index: 0;
 }
 
-/* Normal-flow hero: full viewport height, transparent so the fixed bg shows through */
+/* Spacer: keeps subsequent sections from starting at the top */
 .hero {
     position: relative;
-    /* height: 100vh; */
+    height: 100vh;
     width: 100%;
 }
 
 .hero-content {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    z-index: 1;
     color: white;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -137,8 +142,8 @@ import roofingImage from '../assets/roofing2.jpg';
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero {
-        position: relative;
+    .hero-content {
+        position: fixed;
     }
 }
 </style>

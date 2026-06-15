@@ -10,9 +10,18 @@ import Contact from '../components/Contact.astro';
 
 <MainLayout>
 	<Hero />
-	<Services />
-	<Process />
-	<Proof />
-	<Faq />
-	<Contact />
+	<div class="sections-wrapper">
+		<Services />
+		<Process />
+		<Proof />
+		<Faq />
+		<Contact />
+	</div>
 </MainLayout>
+
+<style>
+	.sections-wrapper {
+		position: relative;
+		z-index: 2;
+	}
+</style>
