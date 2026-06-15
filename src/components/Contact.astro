@@ -1,0 +1,123 @@
+---
+
+---
+
+<section id="contact" class="contact">
+
+    <div class="contact-inner">
+        <div class="section-header">
+            <p class="section-label">Contact</p>
+            <h2>Schedule a Roof Check</h2>
+            <p class="section-intro">
+                Fill out the form below and we'll get back to you as soon as possible.
+            </p>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="JohnDoe@example.com" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your roof or any questions you have." ></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Submit</button>
+
+        </form>
+    </div>
+
+</section>
+
+<style>
+
+    .contact {
+        background-color: #161F2B;
+        padding: 4rem 2rem 2rem;
+    }
+
+    /* Contact section*/
+    .contact-inner {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact h2 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        margin-top: 2rem;
+        text-align: left;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    label {
+        color: #c5cbd3;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    input,
+    textarea {
+        background-color: #2C3A4E;
+        border: 1px solid #3A4A5E;
+        border-radius: 8px;
+        color: #fff;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+        transition: border-color 0.2s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #6b7a8d;
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: var(--color-accent-dark);
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .contact-form .btn-primary {
+        align-self: center;
+        margin-top: 1rem;
+        border-color: none;
+    }
+
+</style>

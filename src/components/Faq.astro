@@ -1,0 +1,141 @@
+---
+import FaqAccordion from "./FaqAccordion.jsx";
+import { faqs } from "../data/faq.js";
+---
+
+<section id="faq" class="faq">
+  <div class="faq-inner">
+    <div class="section-header">
+      <p class="section-label">FAQ</p>
+      <h2>Common Questions</h2>
+      <p class="section-intro">
+        Answers to what most homeowners ask before booking a roof check.
+      </p>
+    </div>
+    <div class="faq-card">
+        <FaqAccordion client:visible faqs={faqs} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background-color: #1F2A38;
+        padding: 4rem 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+        border-radius: 24px;
+        max-width: 65%;
+  }
+
+  .faq-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .faq h2 {
+    color: #fff;
+    margin: 0;
+  }
+
+  .faq-card {
+    background-color: #2C3A4E;
+    border: 1px solid #3a4a5e;
+    border-radius: 10px;
+    padding: 0 1.5rem 1rem;
+    margin-top: 1rem;
+  }
+
+  :global(.faq-list) {
+    margin-top: 1rem;
+    text-align: left;
+  }
+
+  :global(.faq-item) {
+    border-bottom: 1px solid #3a4a5e;
+  }
+
+
+  :global(.faq-item:last-child) {
+    border-bottom: none;
+  }
+
+  :global(.faq-item.is-open .faq-question) {
+    color: var(--color-accent-dark);
+  }
+
+  :global(.faq-question) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1.25rem 0 ;
+    padding-left: 10px;
+    cursor: pointer;
+    text-align: left;
+    gap: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  :global(.faq-question:hover) {
+    color: var(--color-accent-dark);
+    transition: color 0.2s ease;
+  }
+
+  :global(.faq-question:focus-visible) {
+    outline: 3px solid var(--color-accent-dark);
+    outline-offset: 2px;
+  }
+
+  :global(.faq-icon) {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-right: 10px;
+    color: var(--color-accent-dark);
+    flex-shrink: 0;
+  }
+
+  :global(.faq-answer) {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.35s ease;
+    padding-right: 0.6rem;
+    padding-left: 0.6rem;
+  }
+
+  :global(.faq-answer.is-open) {
+    max-height: 200px;
+    opacity: 1;
+  }
+
+  :global(.faq-answer p) {
+    color: #c5cbd3;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+        .faq {
+            max-width: 100%;
+        }
+    }
+
+  @media (prefers-reduced-motion: reduce) {
+    :global(.faq-answer) {
+      transition: none;
+    }
+  }
+
+</style>

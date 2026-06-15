@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+---
+
+<!-- Footer -->
+<footer class="footer">
+
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <Image src={logo} alt="Northline Roofing & Gutters" class="footer-logo" />
+        </div>
+
+        <div class="footer-details">
+            <p class="footer-heading">Contact</p>
+            <p><a href="tel:5550142784">(555) 014-2784</a></p>
+            <p><a href="mailto:info@northlineroofing.com">info@northlineroofing.com</a></p>
+        </div>
+
+        <div class="footer-details">
+            <p class="footer-heading">Service Area</p>
+            <p>Denton · Frisco · McKinney · Plano · and nearby North Texas communities</p>
+        </div>
+
+    </div>
+    
+    <div class="footer-copy">
+        <p>© 2026 Northline Roofing & Gutters. All rights reserved.</p>
+    </div>
+
+</footer>
+
+
+
+<style>
+    .footer {
+        background-color: #161F2B;
+        border-top: 1px solid #2C3A4E;
+    }
+
+    .footer-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2.5rem 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .footer-logo {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+    }
+
+    .footer-heading {
+        color: #fff;
+        font-weight: bold;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08rem;
+        margin: 0 0 0.5rem;
+    }
+
+    .footer-brand,
+    .footer-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-details p {
+        color: #c5cbd3;
+        font-size: 0.9rem;
+        text-align: center;
+        margin: 0 0 0.25rem;
+    }
+
+    .footer-details a {
+        color: #c5cbd3;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    .footer-details a:hover {
+        color: var(--color-accent-dark);
+    }
+
+    .footer-copy {
+        border-top: 1px solid #2C3A4E;
+        text-align: center;
+        padding: 1rem 2rem;
+    }
+
+    .footer-copy p{
+        color: #4A5568;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .footer-inner {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+
+</style>

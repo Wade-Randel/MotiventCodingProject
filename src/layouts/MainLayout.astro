@@ -1,0 +1,40 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Northline Roofing & Gutters helps North Texas homeowners spot storm damage and plan repairs. Schedule a free roof check today." />
+    <meta property="og:title" content="Northline Roofing & Gutters" />
+    <meta property="og:description" content="Roof repairs without the runaround. Serving Denton, Frisco, McKinney, Plano, and surrounding North Texas." />
+    <meta property="og:type" content="website" />
+    <!-- The value of og url would change on actual domain name -->
+    <meta property="og:url" content="https://northlineroofing.com" />
+    <meta property="og:image" content="https://northlineroofing.com/logo.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Northline Roofing & Gutters</title>
+  </head>
+  <body>
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+
+  body {
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+</style>

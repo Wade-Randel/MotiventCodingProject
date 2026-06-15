@@ -1,0 +1,43 @@
+---
+const {title, description } = Astro.props;
+---
+
+<div class="service-card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+    .service-card{
+        background-color: #2C3A4E;
+        border :1px solid #3A4A5E;
+        border-radius: 10px;
+        padding: 1.75rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .service-card:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .service-card h3{
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        color: #fff;
+    }
+
+    .service-card p{
+        margin: 0;
+        text-align: center;
+        color: #c5cbd3;
+        line-height: 1.5;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .service-card:hover {
+            transition: none;
+        }
+    }
+</style>

@@ -1,0 +1,78 @@
+---
+import ProcessCard from './ProcessCard.astro';
+import { steps } from '../data/process.js';
+---
+
+<section id="process" class="process">
+    <div class="process-inner">
+        <div class="section-header">
+            <p class="section-label">Process</p>
+            <h2>What's Our Plan?</h2>
+            <p class="section-intro">
+                No surprises, no upsells, just a clear path from a quick look at your roof to getting it fixed.
+            </p>
+        </div>
+        <div class="process-grid">
+            {steps.map(step => (
+                <ProcessCard number={step.number} title={step.title} description={step.description} />
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .process {
+        background-color: #1F2A38;
+        padding: 4rem 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+        border-radius: 24px;
+        max-width: 65%;
+    }
+
+    .process-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .process h2 {
+        color: #fff;
+        margin: 0;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+        text-align: left;
+        position: relative;
+    }
+
+    @media (max-width: 600px) {
+        .process {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 832px) {
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 47px; /* center of icon circles */
+            left: 16.5%;
+            right: 16.5%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+    }
+</style>

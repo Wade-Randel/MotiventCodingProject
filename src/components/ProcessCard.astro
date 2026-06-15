@@ -1,0 +1,55 @@
+---
+const { number, title, description } = Astro.props;
+---
+
+<div class="process-card">
+    <div class="process-number">{number}</div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+</div>
+
+<style>
+    .process-card {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 1rem;
+    }
+
+    .process-number {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .process-number:hover {
+        background-color: var(--color-accent-dark);
+        transform: translateY(-2px);
+    }
+
+    .process-card h3 {
+        color: #fff;
+        margin: 0 0 0.5rem;
+    }
+
+    .process-card p {
+        color: #c5cbd3;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .process-number:hover {
+            transform: none;
+        }
+    }
+</style>

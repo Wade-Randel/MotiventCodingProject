@@ -1,0 +1,100 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+section {
+  scroll-margin-top: 100px; /* adjust to match your header's actual height */
+}
+
+:root {
+  --color-accent: #c74918;
+  --color-accent-dark: #e95c25;
+  --color-navy: #1F2A38;
+  --color-gray: #4A4A4A;
+}
+
+/* Shared Section Header Pattern */
+.section-header {
+  margin-bottom: 2.5rem;
+}
+
+.section-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--color-accent-dark);
+  margin: 0 0 0.5rem;
+}
+
+.section-intro {
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+  color: #c5cbd3;
+}
+
+/* Shared Button Styles */
+.btn-primary, 
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  padding: 0.85rem 1.75rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff31;
+  transform: translateY(-2px);
+}
+
+.btn-primary:focus-visible, 
+.btn-secondary:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.btn-primary:focus:not(:focus-visible),
+.btn-secondary:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media(prefers-reduced-motion: reduce){
+  .btn-primary:hover, 
+  .btn-secondary:hover {
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

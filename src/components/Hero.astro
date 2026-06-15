@@ -1,0 +1,144 @@
+---
+import {Image} from 'astro:assets'; // Automatic optimization (resizing, WebP conversion, lazy loading)
+import roofingImage from '../assets/roofing2.jpg';
+---
+
+<!-- Fixed background layer — stays behind everything -->
+<div class="hero-bg-wrapper">
+    <Image src={roofingImage} alt="" class="hero-bg" />
+</div>
+
+<!-- Normal-flow section — content is interactive and clickable -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Roof Repairs Without the Runaround</h1>
+        <p>Northline helps homeowners spot damage, plan repairs, and protect their home before the next storm rolls in.</p>
+        <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">Schedule a Roof Check</a>
+            <a href="tel:5550142784" class="btn-secondary">Call (555) 014-2784</a>
+        </div>
+    </div>
+</section>
+
+<script>
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion) {
+    const heroBg = document.querySelector<HTMLElement>('.hero-bg');
+    const heroContent = document.querySelector<HTMLElement>('.hero-content');
+    const maxBlur = 8;
+
+    if (heroBg) {
+      function HeroBlur() {
+        const progress = Math.min(window.scrollY / window.innerHeight, 1);
+        heroBg!.style.filter = `blur(${progress * maxBlur}px)`;
+        heroContent!.style.opacity = `${1 - progress * 2}`;
+      }
+
+      window.addEventListener('scroll', HeroBlur, { passive: true });
+      HeroBlur();
+    }
+  }
+</script>
+
+
+<style>
+/* Fixed background: stays pinned behind all page content */
+.hero-bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
+
+.hero-bg-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2) translateX(1.2%) translateY(2%);
+    transform-origin: center center;
+    z-index: 0;
+}
+
+/* Normal-flow hero: full viewport height, transparent so the fixed bg shows through */
+.hero {
+    position: relative;
+    /* height: 100vh; */
+    width: 100%;
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 11rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 0px;
+    font-size: 86px;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+.hero-ctas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        padding-top: 10rem;
+    }
+
+    .hero-bg {
+        transform: scale(1.5) translateX(2.5%) translateY(4%);
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero {
+        position: relative;
+    }
+}
+</style>
