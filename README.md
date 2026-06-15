@@ -20,7 +20,7 @@ npm run build
 
 # Assumptions:
 * A backend exists to support the frontend form section
-* The domain name would be https://northlineroofing.com
+* The domain name would be https://wade-randel.github.io/MotiventCodingProject/
 * Phone number is a placeholder
 * OG image is a placeholder
 
